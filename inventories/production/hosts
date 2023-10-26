@@ -1,3 +1,2 @@
-[home]
-server ansible_host=192.168.1.55 ansible_user=jenkins
-rpi ansible_host=192.168.1.142 ansible_user=jenkins
+server ansible_host=192.168.1.55
+rpi ansible_host=192.168.1.142
