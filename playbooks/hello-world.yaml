@@ -1,6 +1,6 @@
 ---
 - name: Hello World Playbook
-  hosts: server
+  hosts: jenkins
   tasks:
     - name: Print message
       debug:
