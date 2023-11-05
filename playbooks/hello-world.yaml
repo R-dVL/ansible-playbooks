@@ -7,3 +7,4 @@
         msg:
           - "name: {{ project.name }}"
           - "version: {{ project.version }}"
+          - "url: {{ project.url }}"
