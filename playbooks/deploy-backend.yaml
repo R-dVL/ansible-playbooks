@@ -1,17 +1,20 @@
 ---
 - name: Deploy and Start Service
   hosts: jenkins
-  roles:
-    - role: pre_install
+  tasks:
+    - name: Pre install
+      import_role:
+        name: pre_install
       vars:
         project: project
 
-    - tasks:
-      - name: Install dependencies
-        shell: npm install
-        args:
-          chdir: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}
+    - name: Install dependencies
+      shell: npm install
+      args:
+        chdir: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}
 
-    - role: post_install
+    - name: Post install
+      import_role:
+        name: post_install
       vars:
         project: project
