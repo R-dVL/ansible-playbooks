@@ -2,16 +2,24 @@
 - name: Deploy and Start Service
   hosts: jenkins
   tasks:
+    - name: Stop service
+      command: pm2 stop {{ project.name }}
+      become: yes
+      ignore_errors: yes
+
     - name: Check installed versions
-      shell: if [ -d \'/opt/apps/${name}/${version}\' ]; then echo \'true\'; else echo \'false\'; fi
-      register: result
+      shell: if [ -d \'/opt/apps/{{ project.name }}/{{ project.version }}\' ]; then echo \'true\'; else echo \'false\'; fi
+      register: installed
+
+    - name: Uninstall version
+      shell: rm -rf /opt/apps/{{ project.name }}/{{ project.version }}
+      when: installed.stdout == true
 
     - name: Create directories and clone repository
       shell: >
         mkdir /opt/apps/{{ project.name }}/{{ project.version }} &&
         cd /opt/apps/{{ project.name }}/{{ project.version }} &&
         git clone --depth 1 --branch {{ project.version }} {{ project.url }}
-      when: result.stdout == "false"
 
     - name: Install dependencies
       shell: npm install
@@ -32,6 +40,7 @@
 
     - name: Start service
       shell: bash /opt/apps/{{ project.name }}/start.sh {{ project.version }}
+      become: yes
 
     - name: Wait for service to start
       pause:
