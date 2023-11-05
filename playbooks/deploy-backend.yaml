@@ -6,13 +6,11 @@
       vars:
         project: project
 
-  tasks:
     - name: Install dependencies
       shell: npm install
       args:
         chdir: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}
 
-  roles:
     - role: post_install
       vars:
         project: project
