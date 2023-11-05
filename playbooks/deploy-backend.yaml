@@ -21,8 +21,8 @@
     - name: Write .env file
       vars:
         env_content: |
-          MONGO_USER={{ user }}
-          MONGO_PASSWORD={{ password }}
+          MONGO_USER={{ project.user }}
+          MONGO_PASSWORD={{ project.password }}
           MONGO_URI=localhost:27017
           MONGO_DB=cat-watcher
       copy:
