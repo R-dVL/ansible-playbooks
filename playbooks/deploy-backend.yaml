@@ -2,11 +2,16 @@
 - name: Deploy and Start Service
   hosts: jenkins
   tasks:
+    - name: Check installed versions
+      shell: if [ -d \'/opt/apps/${name}/${version}\' ]; then echo \'true\'; else echo \'false\'; fi
+      register: result
+
     - name: Create directories and clone repository
       shell: >
         mkdir /opt/apps/{{ project.name }}/{{ project.version }} &&
         cd /opt/apps/{{ project.name }}/{{ project.version }} &&
         git clone --depth 1 --branch {{ project.version }} {{ project.url }}
+      when: result.stdout == "false"
 
     - name: Install dependencies
       shell: npm install
