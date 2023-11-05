@@ -8,12 +8,13 @@
       ignore_errors: yes
 
     - name: Check installed versions
-      shell: if [ -d \'/opt/apps/{{ project.name }}/{{ project.version }}\' ]; then echo \'true\'; else echo \'false\'; fi
+      stat:
+        path: /opt/apps/{{ project.name }}/{{ project.version }}
       register: installed
 
     - name: Uninstall version
       shell: rm -rf /opt/apps/{{ project.name }}/{{ project.version }}
-      when: installed.stdout == true
+      when: installed.stat.exists
 
     - name: Create directories and clone repository
       shell: >
