@@ -6,7 +6,7 @@
       vars:
         project: project
 
-    tasks:
+    - tasks:
       - name: Install dependencies
         shell: npm install
         args:
