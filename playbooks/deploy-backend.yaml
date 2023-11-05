@@ -6,4 +6,3 @@
       shell: >
         mkdir /opt/apps/{{ project.name }}/{{ project.version }} &&
         cd /opt/apps/{{ project.name }}/{{ project.version }} &&
-        git clone --depth 1 --branch {{ project.version }} {{ project.url }}
