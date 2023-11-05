@@ -1,0 +1,31 @@
+---
+- name: Deploy and Start Service
+  hosts: tu_host
+  tasks:
+    - name: Create directories and clone repository
+      command: >
+        mkdir /opt/apps/{{ name }}/{{ version }} &&
+        cd /opt/apps/{{ name }}/{{ version }} &&
+        git clone --depth 1 --branch {{ version }} {{ url }}
+      args:
+        executable: /bin/bash
+
+    - name: Install dependencies with npm
+      command: npm install
+      args:
+        chdir: /opt/apps/{{ name }}/{{ version }}/{{ name }}
+        executable: /bin/bash
+
+    - name: Start service
+      command: bash /opt/apps/{{ name }}/start.sh {{ version }}
+      args:
+        executable: /bin/bash
+
+    - name: Wait for service to start
+      pause:
+        seconds: 15
+
+    - name: Show log
+      command: cat /opt/apps/{{ name }}/{{ version }}/{{ name }}.log
+      args:
+        executable: /bin/bash
