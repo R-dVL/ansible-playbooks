@@ -1,0 +1,23 @@
+---
+- name: Write .env file
+  vars:
+    env_content: |
+      MONGO_USER={{ project.user }}
+      MONGO_PASSWORD={{ project.password }}
+      MONGO_URI=localhost:27017
+      MONGO_DB=cat-watcher
+  copy:
+    content: "{{ env_content }}"
+    dest: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
+    mode: '0644'
+
+- name: Start service
+  shell: bash /opt/apps/{{ project.name }}/start.sh {{ project.version }}
+  become: true
+
+- name: Wait for service to start
+  pause:
+    seconds: 15
+
+- name: Show log
+  shell: cat /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}.log
