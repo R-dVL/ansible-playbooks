@@ -9,23 +9,3 @@
         git clone --depth 1 --branch {{ project.version }} {{ project.url }}
       args:
         executable: /bin/bash
-
-    - name: Install dependencies with npm
-      command: npm install
-      args:
-        chdir: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}
-        executable: /bin/bash
-
-    - name: Start service
-      command: bash /opt/apps/{{ project.name }}/start.sh {{ project.version }}
-      args:
-        executable: /bin/bash
-
-    - name: Wait for service to start
-      pause:
-        seconds: 15
-
-    - name: Show log
-      command: cat /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}.log
-      args:
-        executable: /bin/bash
