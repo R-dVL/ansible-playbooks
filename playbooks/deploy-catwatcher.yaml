@@ -25,7 +25,7 @@
     - name: Install dependencies
       shell: >
         python3 -m venv /opt/apps/{{ project.name }}/{{ project.version }}/venv &&
-        source /opt/apps/{{ project.name }}/{{ project.version }}/venv/bin/activate &&
+        . /opt/apps/{{ project.name }}/{{ project.version }}/venv/bin/activate &&
         pip3 install -r /opt/apps/{{ project.name }}/{{ project.version }}/requirements.txt
 
     - name: Write .env file
