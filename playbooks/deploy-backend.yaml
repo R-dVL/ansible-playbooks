@@ -1,6 +1,6 @@
 ---
 - name: Deploy and Start Service
-  hosts: tu_host
+  hosts: jenkins
   tasks:
     - name: Create directories and clone repository
       command: >
