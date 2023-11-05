@@ -1,6 +1,6 @@
 ---
 - name: Hello World Playbook
-  hosts: jenkins
+  hosts: "{{ ansible_host }}"
   tasks:
     - name: Print message
       debug:
