@@ -4,4 +4,6 @@
   tasks:
     - name: Print message
       debug:
-        var: project
+        msg:
+          - "name: {{ project.name }}"
+          - "version: {{ project.version }}"
