@@ -1,6 +1,5 @@
-# Automation Library
-_Playbooks used with Jenkins to automate deploys, and some server functions._
-> [jenkins-library](https://github.com/R-dVL/jenkins-library.git)
+# Ansible Playbooks
+_Playbooks used with [jenkins-library](https://github.com/R-dVL/jenkins-library.git) to automate deploys, and some server functions._
 
 
 ## Table of Contents
