@@ -26,36 +26,44 @@ _Playbooks used with [jenkins-library](https://github.com/R-dVL/jenkins-library.
 
 ## Playbooks
 ### Deploy
+---
 Deploys app in function of the parameters given by Jenkins
 
 
 ## Roles
 ### Common
-Common roles used in playbooks
+---
+_Common roles used in playbooks_
 
 
 #### Pre install
+---
 Stops the services, checks version to be installed (if installed, uninstalls it) and create folders for installation.
 
 
 #### Post install
+---
 Runs service, and check status.
 
 
 ### Projects
-Project specific roles.
+---
+_Project specific roles._
 
 
 #### Cat Watcher
+---
 Creates a Python virtual environment, activates it, and installs requirements.
 > [cat-watcher](https://github.com/R-dVL/cat-watcher.git)
 
 
 #### Lima Backend
+---
 Install Nodejs dependencies.
 > [lima-backend](https://github.com/R-dVL/lima-backend.git)
 
 #### Lima Frontend
+---
 Install NodeJs dependencies.
 > [lima-frontend](https://github.com/R-dVL/lima-frontend.git)
 > (TODO: Change deploy logic to serve production webserver.)
