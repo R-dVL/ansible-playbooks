@@ -1,10 +1,10 @@
 ---
 - name: Write .env file
-    template:
-      src: env.j2
-      dest: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
-    vars:
-      project: project
+  template:
+    src: env.j2
+    dest: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
+  vars:
+    project: project
 
 - name: Start service
   shell: bash /opt/apps/{{ project.name }}/start.sh {{ project.version }}
