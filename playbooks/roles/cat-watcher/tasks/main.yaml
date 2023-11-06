@@ -1,0 +1,6 @@
+---
+- name: Install dependencies
+  shell: >
+    python3 -m venv /opt/apps/{{ project.name }}/{{ project.version }}/venv &&
+    . /opt/apps/{{ project.name }}/{{ project.version }}/venv/bin/activate &&
+    pip3 install -r /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/requirements.txt
