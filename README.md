@@ -26,13 +26,11 @@ _Playbooks used with [jenkins-library](https://github.com/R-dVL/jenkins-library.
 
 ## Playbooks
 ### Deploy
----
 Deploys app in function of the parameters given by Jenkins
 
 
 ## Roles
 ### Common
----
 _Common roles used in playbooks_
 
 
@@ -45,7 +43,6 @@ Runs service, and check status.
 
 
 ### Projects
----
 _Project specific roles._
 
 
