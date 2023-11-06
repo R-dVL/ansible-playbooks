@@ -4,7 +4,7 @@ _Playbooks used with [jenkins-library](https://github.com/R-dVL/jenkins-library.
 
 ## Table of Contents
 1. [Project Structure](#Project%20Structure)
-2. [Inventory](#Inventory)
+2. [Inventories](#Inventories)
 3. [Playbooks](#Playbooks)
 4. [Roles](#Roles)
 
@@ -25,7 +25,7 @@ _Playbooks used with [jenkins-library](https://github.com/R-dVL/jenkins-library.
 |   +- deploy.yaml
 ~~~
 
-## Inventory
+## Inventories
 ### Hosts
 Hosts used are defined in _hosts.yaml_ and accessed with ssh key pairs.
 > [Configure SSH Host with Key pairs](https://gist.github.com/R-dVL/659e292d74e692f2fb15c9f4d41eae84)
