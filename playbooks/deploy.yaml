@@ -2,8 +2,8 @@
 - name: Deploy and Start Service
   hosts: jenkins
   roles:
-    - pre_install
+    - common/pre_install
     - "{{ project.name }}"
-    - post_install
+    - common/post_install
   vars:
     project: project
