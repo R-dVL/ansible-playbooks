@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  description: Project Post-Installation common tasks
+  author: R-dVL
+  license: N/A
+  min_ansible_version: 2.9
+
+
+dependencies: []
