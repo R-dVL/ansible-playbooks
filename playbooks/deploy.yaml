@@ -3,7 +3,7 @@
   hosts: jenkins
   roles:
     - pre_install
-    - {{ project.role }}
+    - {{ project.name }}
     - post_install
   vars:
     project: project
