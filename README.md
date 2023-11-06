@@ -33,29 +33,17 @@ Deploys app in function of the parameters given by Jenkins
 ### Common
 _Common roles used in playbooks_
 
+- **pre_install:** Stops the services, checks version to be installed (if installed, uninstalls it) and create folders for installation.
 
-#### Pre install
-Stops the services, checks version to be installed (if installed, uninstalls it) and create folders for installation.
-
-
-#### Post install
-Runs service, and check status.
+- **post_install:** Runs service, and check status.
 
 
 ### Projects
 _Project specific roles._
 
+- **[cat-watcher](https://github.com/R-dVL/cat-watcher.git):** Creates a Python virtual environment, activates it, and installs requirements.
 
-#### Cat Watcher
-Creates a Python virtual environment, activates it, and installs requirements.
-> [cat-watcher](https://github.com/R-dVL/cat-watcher.git)
+- **[lima-backend](https://github.com/R-dVL/lima-backend.git):** Install Nodejs dependencies.
 
-
-#### Lima Backend
-Install Nodejs dependencies.
-> [lima-backend](https://github.com/R-dVL/lima-backend.git)
-
-#### Lima Frontend
-Install NodeJs dependencies.
-> [lima-frontend](https://github.com/R-dVL/lima-frontend.git)
-> (TODO: Change deploy logic to serve production webserver.)
+- **[lima-frontend](https://github.com/R-dVL/lima-frontend.git):** Install NodeJs dependencies.
+> TODO: Change deploy logic to serve production webserver.
