@@ -11,6 +11,7 @@
 
 - name: Uninstall version
   shell: rm -rf /opt/apps/{{ project.name }}/{{ project.version }}
+  become: true
   when: installed.stat.exists
 
 - name: Create directories and clone repository
