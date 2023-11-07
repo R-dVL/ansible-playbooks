@@ -2,12 +2,11 @@ servers:
   hosts:
     jenkins:
       ansible_host: 192.168.1.55
-      ansible_connection: ssh
       ansible_user: jenkins
+      ansible_ssh_extra_args: -o StrictHostKeyChecking=accept-new
 
 remote:
   hosts:
     rpi:
       ansible_host: 192.168.1.44
-      ansible_connection: ssh
       ansible_user: jenkins
