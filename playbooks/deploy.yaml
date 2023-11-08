@@ -1,6 +1,6 @@
 ---
 - name: Deploy and Start Service
-  hosts: jenkins
+  hosts: server
   roles:
     - common/pre-install
     - "{{ project.name }}"
