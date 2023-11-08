@@ -29,7 +29,7 @@
       line: 'MONGO_DB={{ project.database }}'
       backrefs: yes
 
-  when: '{{ project.database }}' not null
+  when: '{{ project.database }}' not 'null'
 
 - name: Start service
   shell: bash /opt/apps/{{ project.name }}/start.sh {{ project.version }}
