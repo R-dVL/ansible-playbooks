@@ -1,6 +1,6 @@
 ---
 - name: Environment vars
-- block:
+  block:
   - name: MongoDB User
     lineinfile: 
       path: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
