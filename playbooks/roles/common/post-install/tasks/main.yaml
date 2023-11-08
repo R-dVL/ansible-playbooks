@@ -4,29 +4,29 @@
   - name: MongoDB User
     lineinfile: 
       path: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
-      regexp: '\[USER]' 
-      line: '{{ project.user }}'
+      regexp: 'MONGO_USER' 
+      line: 'MONGO_USER={{ project.user }}'
       backrefs: yes
 
   - name: MongoDB Password
     lineinfile: 
       path: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
-      regexp: '\[PASSWORD]' 
-      line: '{{ project.password }}'
+      regexp: 'MONGO_PASSWORD' 
+      line: 'MONGO_PASSWORD={{ project.user }}'
       backrefs: yes
 
   - name: MongoDB URI
     lineinfile: 
       path: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
-      regexp: '\[URI]' 
-      line: 'localhost:27017'
+      regexp: 'MONGO_URI' 
+      line: 'MONGO_URI=localhost:27017'
       backrefs: yes
 
   - name: MongoDB Database
     lineinfile: 
       path: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
-      regexp: '\[DB]' 
-      line: 'cat-watcher'
+      regexp: 'MONGO_DB' 
+      line: 'MONGO_DB=cat-watcher'
       backrefs: yes
 
   when: true # Evaluate when .env is needed
