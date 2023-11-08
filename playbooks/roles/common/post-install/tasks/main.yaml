@@ -1,5 +1,5 @@
 ---
-- name: Environment vars
+- name: Database .env vars
   block:
   - name: MongoDB User
     lineinfile: 
@@ -29,7 +29,7 @@
       line: 'MONGO_DB={{ project.database }}'
       backrefs: yes
 
-  when: true # Evaluate when .env is needed
+  when: {{ project.database }} != null
 
 - name: Start service
   shell: bash /opt/apps/{{ project.name }}/start.sh {{ project.version }}
