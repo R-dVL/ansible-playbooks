@@ -1,10 +1,35 @@
 ---
-- name: Write .env file
-  template:
-    src: env.j2
-    dest: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
-  vars:
-    project: project
+- name: Environment vars
+- block:
+  - name: MongoDB User
+    lineinfile: 
+      path: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
+      regexp: '\[USER]' 
+      line: '{{ project.user }}'
+      backrefs: yes
+
+  - name: MongoDB Password
+    lineinfile: 
+      path: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
+      regexp: '\[PASSWORD]' 
+      line: '{{ project.password }}'
+      backrefs: yes
+
+  - name: MongoDB URI
+    lineinfile: 
+      path: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
+      regexp: '\[URI]' 
+      line: 'localhost:27017'
+      backrefs: yes
+
+  - name: MongoDB Database
+    lineinfile: 
+      path: /opt/apps/{{ project.name }}/{{ project.version }}/{{ project.name }}/.env
+      regexp: '\[DB]' 
+      line: 'cat-watcher'
+      backrefs: yes
+
+  when: true # Evaluate when .env is needed
 
 - name: Start service
   shell: bash /opt/apps/{{ project.name }}/start.sh {{ project.version }}
