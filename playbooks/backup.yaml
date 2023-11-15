@@ -8,7 +8,7 @@
 
     - name: Sync
       synchronize:
-        src: path
+        src: /DATA/Media
         dest: /media/devmon/WD_BLACK/NAS/system/backups
       delegate_to: server
       become: true
