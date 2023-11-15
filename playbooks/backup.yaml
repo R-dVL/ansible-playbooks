@@ -2,6 +2,10 @@
 - name: Backup Server Files
   hosts: server
   tasks:
+    - name: Params
+      debug:
+        var: path
+
     - name: Sync
       synchronize:
         src: path
