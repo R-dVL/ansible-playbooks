@@ -1,0 +1,6 @@
+---
+- name: Test
+  hosts: server
+  tasks:
+    - name: Test
+      msg: "testing playbook"
