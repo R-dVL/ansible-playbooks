@@ -4,7 +4,10 @@
   tasks:
     - name: Sync
       synchronize:
-        src: /DATA/Media
+        src: path
         dest: /media/devmon/WD_BLACK/NAS/system/backups
       delegate_to: server
       become: true
+  
+  vars:
+    path: path
