@@ -1,0 +1,13 @@
+---
+- name: Backup Server Files
+  hosts: server
+  tasks:
+    - name: Gallery
+      synchronize:
+        src: /DATA/Gallery
+        dest: /media/devmon/WD_BLACK/NAS/system/backups_test/Gallery
+
+    - name: Media
+      synchronize:
+        src: /DATA/Media
+        dest: /media/devmon/WD_BLACK/NAS/system/backups_test/Media
