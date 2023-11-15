@@ -2,13 +2,9 @@
 - name: Backup Server Files
   hosts: server
   tasks:
-    - name: Params
-      debug:
-        var: path
-
     - name: Sync
       synchronize:
-        src: /DATA/Media
+        src: "{{ path }}"
         dest: /media/devmon/WD_BLACK/NAS/system/backups
       delegate_to: server
       become: true
