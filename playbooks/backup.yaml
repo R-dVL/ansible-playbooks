@@ -6,10 +6,12 @@
       synchronize:
         src: /DATA/Gallery
         dest: /media/devmon/WD_BLACK/NAS/system/backups_test/Gallery
+      delegate_to: server
       become: true
 
     - name: Media
       synchronize:
         src: /DATA/Media
         dest: /media/devmon/WD_BLACK/NAS/system/backups_test/Media
+      delegate_to: server
       become: true
