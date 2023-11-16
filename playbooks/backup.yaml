@@ -7,6 +7,7 @@
         src: "{{ src_path }}"
         dest: /media/devmon/WD_BLACK/NAS/system/backups
         delete: true
+        become_user: rdvl
       delegate_to: server
       become: true
 
