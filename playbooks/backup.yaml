@@ -6,6 +6,7 @@
       synchronize:
         src: "{{ src_path }}"
         dest: /media/devmon/WD_BLACK/NAS/system/backups
+        perms: false
       delegate_to: server
       become: true
 
