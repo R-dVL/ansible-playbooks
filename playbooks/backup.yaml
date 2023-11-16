@@ -7,7 +7,7 @@
         src: "{{ src_path }}"
         dest: /media/devmon/WD_BLACK/NAS/system/backups
       delegate_to: server
-      perms: false
+      rsync_path: "sudo rsync"
       become: true
 
   vars:
