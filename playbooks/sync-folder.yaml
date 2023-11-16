@@ -5,7 +5,7 @@
     - name: Sync
       synchronize:
         src: "{{ src_path }}"
-        dest: /media/devmon/WD_BLACK/NAS/system/backups
+        dest: /NAS/system/backups
         delete: true
         perms: false
         owner: false
