@@ -1,5 +1,5 @@
 ---
-- name: Backup Server Files
+- name: Sync Server Folder
   hosts: server
   tasks:
     - name: Sync
