@@ -4,9 +4,9 @@
   tasks:
     - name: Sync
       synchronize:
-        src: "{{ path }}"
+        src: "{{ src_path }}"
         dest: /media/devmon/WD_BLACK/NAS/system/backups
       delegate_to: server
       become: true
   vars:
-    path: path
+    path: src_path
