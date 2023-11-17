@@ -10,6 +10,7 @@
         perms: false
         owner: false
         group: false
+        links: false
       delegate_to: server
       become: true
 
