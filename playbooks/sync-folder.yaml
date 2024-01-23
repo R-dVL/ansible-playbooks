@@ -5,7 +5,7 @@
     - name: Sync
       synchronize:
         src: "{{ src_path }}"
-        dest: /DATA/Backups
+        dest: "{{ dest_path }}"
         delete: true
         perms: false
         owner: false
@@ -15,4 +15,5 @@
       become: true
 
   vars:
-    path: src_path
+    src_path: src_path
+    dest_path: dest_path
