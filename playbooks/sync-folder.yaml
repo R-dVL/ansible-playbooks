@@ -5,7 +5,7 @@
     - name: Sync
       synchronize:
         src: "{{ src_path }}"
-        dest: /NAS/system/backups
+        dest: /DATA/Backups
         delete: true
         perms: false
         owner: false
