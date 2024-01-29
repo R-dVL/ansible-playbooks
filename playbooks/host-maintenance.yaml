@@ -1,5 +1,5 @@
 ---
-- name: Host Management
+- name: Host Maintenance
   hosts: "{{ host }}"
   tasks:
     - name: Update Host
@@ -17,7 +17,7 @@
       become: true
 
     - name: Reboot Host
-      reboot:
+      shell: reboot -r +1
       become: true
 
   vars:
