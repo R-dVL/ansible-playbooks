@@ -1,6 +1,6 @@
 ---
 - name: Host Management
-  hosts: {{ host }}
+  hosts: "{{ host }}"
   tasks:
     - name: Update Host
       apt:
