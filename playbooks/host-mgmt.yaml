@@ -8,7 +8,7 @@
         upgrade: 'yes'
       become: true
 
-    - name: Clean Docker
+    - name: Docker Prune
       docker_prune:
         containers: true
         images: true
