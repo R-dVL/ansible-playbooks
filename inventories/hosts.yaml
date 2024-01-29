@@ -7,6 +7,7 @@ servers:
 
 remote:
   hosts:
-    rpi:
+    rastberry:
       ansible_host: 192.168.1.44
       ansible_user: jenkins
+      ansible_ssh_extra_args: -o StrictHostKeyChecking=accept-new
