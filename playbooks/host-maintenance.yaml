@@ -17,7 +17,7 @@
       become: true
 
     - name: Reboot Host
-      shell: shutdwn -r +1
+      shell: shutdown -r +1
       become: true
 
   vars:
