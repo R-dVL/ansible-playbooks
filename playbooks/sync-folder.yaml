@@ -1,6 +1,6 @@
 ---
 - name: Sync Folder
-  hosts: "{{ host }}"
+  hosts: all
   tasks:
     - name: Sync
       synchronize:
@@ -15,6 +15,5 @@
       become: true
 
   vars:
-    host: host
     src_path: src_path
     dest_path: dest_path
