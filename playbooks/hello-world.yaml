@@ -1,9 +1,7 @@
 ---
-- name: Hello AWX
+- name: Hello World Sample
   hosts: all
   tasks:
-    - name: Update Host
-      apt:
-        update_cache: true
-        upgrade: 'yes'
-      become: true
+    - name: Hello Message
+      debug:
+        msg: "Hello World!"
