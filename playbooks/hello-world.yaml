@@ -1,0 +1,6 @@
+---
+- name: Hello AWX
+  hosts: all
+  tasks:
+    - name: Hello
+      debug: Hello Wordl
