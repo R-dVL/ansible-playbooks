@@ -2,5 +2,8 @@
 - name: Hello AWX
   hosts: all
   tasks:
-    - name: Hello
-      debug: Hello Wordl
+    - name: Update Host
+      apt:
+        update_cache: true
+        upgrade: 'yes'
+      become: true

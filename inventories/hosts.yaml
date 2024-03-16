@@ -1,13 +1,9 @@
-servers:
+home:
   hosts:
     server:
-      ansible_host: 192.168.1.55
-      ansible_user: jenkins
-      ansible_ssh_extra_args: -o StrictHostKeyChecking=accept-new
+      ansible_host: 192.168.1.39
+      ansible_user: rdvl
 
-remote:
-  hosts:
     rastberry:
       ansible_host: 192.168.1.44
-      ansible_user: jenkins
-      ansible_ssh_extra_args: -o StrictHostKeyChecking=accept-new
+      ansible_user: rdvl
