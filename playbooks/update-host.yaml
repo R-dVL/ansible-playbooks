@@ -3,7 +3,13 @@
   hosts: all
   tasks:
     - name: Update and upgrade
+      become: yes
       apt:
+        name: '*'
+        state: latest
         update_cache: true
         upgrade: 'yes'
-      become: true
+        register: apt_get_status
+        until: apt_get_status is success
+        retries: 60
+        delay: 10
