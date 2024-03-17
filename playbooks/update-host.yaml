@@ -8,4 +8,10 @@
       apt:
         update_cache: true
         upgrade: 'yes'
-        lock_timeout: 120
+        lock_timeout: 240
+
+    - name: Cleanup
+      become: true
+      apt:
+        clean: true
+        autoremove: true
