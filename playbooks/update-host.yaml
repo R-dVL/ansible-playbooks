@@ -1,13 +1,11 @@
 ---
 - name: Update host
   hosts: all
+  sudo: yes
+
   tasks:
     - name: Update and upgrade
-      become: yes
+      become: true
       apt:
         update_cache: true
         upgrade: 'yes'
-        register: apt_get_status
-        until: apt_get_status is success
-        retries: 60
-        delay: 10
