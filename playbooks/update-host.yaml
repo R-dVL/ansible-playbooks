@@ -1,7 +1,6 @@
 ---
 - name: Update host
   hosts: all
-  sudo: yes
 
   tasks:
     - name: Update and upgrade
