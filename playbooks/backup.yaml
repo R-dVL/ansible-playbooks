@@ -1,0 +1,8 @@
+---
+- name: Backup
+  hosts: servers
+  roles:
+    - backup.gallery
+    - backup.media
+    - backup.appdata
+    - backup.documents

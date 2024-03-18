@@ -1,0 +1,4 @@
+---
+src_path: "/mnt/Storage/Documents"
+dest_path: "/media/WD_Black/Backups/Documents"
+max_backups: 2

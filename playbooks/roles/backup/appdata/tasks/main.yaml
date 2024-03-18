@@ -1,5 +1,5 @@
 ---
-- name: Backup
+- name: Backup AppData
   hosts: all
   tasks:
     - name: Create backup
@@ -22,8 +22,3 @@
         state: absent
       with_items: "{{ sorted_backups[max_backups:] }}"
       when: backups.matched > max_backups
-
-  vars:
-    src_path: src_path
-    dest_path: dest_path
-    max_backups: 2
