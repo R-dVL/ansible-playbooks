@@ -1,7 +1,0 @@
----
-- name: Reboot host
-  hosts: all
-  tasks:
-    - name: Reboot
-      shell: shutdown -r +1
-      become: true

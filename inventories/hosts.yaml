@@ -2,8 +2,8 @@ home:
   hosts:
     server:
       ansible_host: 192.168.1.39
-      ansible_user: rdvl
+      ansible_user: ansible
 
     rastberry:
       ansible_host: 192.168.1.44
-      ansible_user: rdvl
+      ansible_user: ansible
