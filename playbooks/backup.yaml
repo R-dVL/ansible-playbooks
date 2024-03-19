@@ -2,7 +2,33 @@
 - name: Backup
   hosts: servers
   roles:
-    - backup.gallery
-    - backup.media
-    - backup.appdata
-    - backup.documents
+
+    - name: Gallery
+      role: backup-folder
+      vars:
+        src_path: /mnt/Storage/Gallery
+        dest_path: /media/devmon/WD_BLACK/Backups/Gallery
+
+    - name: Media
+      role: backup-folder
+      vars:
+        src_path: /mnt/Storage/Media
+        dest_path: /media/devmon/WD_BLACK/Backups/Media
+
+    - name: Documents
+      role: backup-folder
+      vars:
+        src_path: /mnt/Storage/Documents
+        dest_path: /media/devmon/WD_BLACK/Backups/Documents
+
+    - name: AppData
+      role: backup-folder
+      vars:
+        src_path: /mnt/Storage/AppData
+        dest_path: /media/devmon/WD_BLACK/Backups/AppData
+
+    - name: Apps
+      role: backup-folder
+      vars:
+        src_path: /var/lib/casaos/apps
+        dest_path: /media/devmon/WD_BLACK/Backups/apps

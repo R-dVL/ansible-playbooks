@@ -1,0 +1,4 @@
+---
+src_path: "/home/ansible"
+dest_path: "/media/WD_Black/Backups/ansible"
+max_backups: 2
