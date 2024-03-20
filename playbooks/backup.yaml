@@ -2,7 +2,6 @@
 - name: Backup
   hosts: servers
   roles:
-
     - name: Gallery
       role: backup-folder
       vars:

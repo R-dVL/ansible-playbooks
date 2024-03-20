@@ -1,7 +1,6 @@
 ---
 - name: Update host
   hosts: all
-
   tasks:
     - name: Update and upgrade
       become: true
