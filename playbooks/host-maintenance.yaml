@@ -1,0 +1,12 @@
+---
+- name: Host Maintenance
+  hosts: servers
+  roles:
+    - name: Update
+      role: update-host
+
+    - name: Docker Cleanup
+      role: docker-cleanup
+
+    - name: Reboot
+      role: reboot

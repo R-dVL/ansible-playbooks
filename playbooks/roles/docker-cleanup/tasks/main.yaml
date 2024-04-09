@@ -1,0 +1,8 @@
+---
+- name: Docker Prune
+  become: true
+  docker_prune:
+    containers: true
+    images: true
+    networks: true
+    volumes: true

@@ -1,0 +1,12 @@
+---
+- name: Update and upgrade
+  become: true
+  apt:
+    update_cache: true
+    upgrade: 'yes'
+
+- name: Cleanup
+  become: true
+  apt:
+    autoclean: true
+    autoremove: true
