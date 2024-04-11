@@ -1,4 +1,4 @@
 ---
 - name: Reboot
   become: true
-  command: shutdown -r +1
+  command: "shutdown -r +{{ time }}"

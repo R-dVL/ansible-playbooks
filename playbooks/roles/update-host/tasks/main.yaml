@@ -10,3 +10,4 @@
   apt:
     autoclean: true
     autoremove: true
+  when: purge

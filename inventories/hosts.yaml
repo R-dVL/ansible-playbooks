@@ -2,9 +2,9 @@ servers:
   hosts:
     zimaboard:
       ansible_host: 192.168.1.39
-
+      ansible_python_interpreter: /usr/bin/python3
 
 remote:
   hosts:
-    rastberry:
+    raspberry:
       ansible_host: 192.168.1.44

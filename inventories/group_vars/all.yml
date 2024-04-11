@@ -1,3 +1,5 @@
+## Credentials ##
+# ansible
 ansible_user: ansible
 ansible_password: !vault |
     $ANSIBLE_VAULT;1.1;AES256
@@ -7,6 +9,7 @@ ansible_password: !vault |
     6664306464333338350a343332313838643764373135636238353836623166386364626138363330
     38333266613336363263633638366234666135353366353764363538343365643135
 
+# root
 ansible_become_user: root
 ansible_become_password: !vault |
     $ANSIBLE_VAULT;1.1;AES256
@@ -16,4 +19,6 @@ ansible_become_password: !vault |
     6664306464333338350a343332313838643764373135636238353836623166386364626138363330
     38333266613336363263633638366234666135353366353764363538343365643135
 
+## Configuration ##
+# ssh
 ansible_ssh_extra_args: -o StrictHostKeyChecking=accept-new

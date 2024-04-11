@@ -1,4 +1,7 @@
 ---
+# Backup paths
 src_path: "/home/ansible"
 dest_path: "/media/WD_Black/Backups/ansible"
+
+# Maximum backups to keep
 max_backups: 2
