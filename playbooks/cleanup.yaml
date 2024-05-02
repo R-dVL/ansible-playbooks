@@ -1,0 +1,6 @@
+---
+- name: Cleanup
+  hosts: servers
+  roles:
+    - name: Docker Cleanup
+      role: docker-cleanup

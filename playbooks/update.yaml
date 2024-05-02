@@ -1,0 +1,9 @@
+---
+- name: Server Update
+  hosts: servers
+  roles:
+    - name: Update
+      role: update
+
+    - name: Reboot
+      role: reboot
