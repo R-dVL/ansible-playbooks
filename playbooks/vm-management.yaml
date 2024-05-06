@@ -1,0 +1,20 @@
+---
+- name: Virtual Machine Management
+  hosts: servers
+  vars:
+    option: "{{ option }}"
+
+  tasks:
+    - name: Print option value
+      debug:
+        msg: "The value of option is: {{ option }}"
+  
+    - name: Start Virtual Machine
+      include_role:
+        name: start-vm
+      when: option == 'start'
+
+    - name: Stop Virtual Machine
+      include_role:
+        name: stop-vm
+      when: option == 'stop'

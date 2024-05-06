@@ -1,0 +1,3 @@
+---
+- name: Start Virtual Machine
+  command: VBoxManage startvm {{ vm }} --type headless
