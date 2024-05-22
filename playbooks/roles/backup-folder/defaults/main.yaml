@@ -5,3 +5,6 @@ dest_path: "/media/WD_Black/Backups/ansible"
 
 # Maximum backups to keep
 max_backups: 2
+
+# Purge options
+delete_old_backups: true

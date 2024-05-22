@@ -9,13 +9,23 @@
     patterns: '*.tar.gz'
   register: backups
 
+- name: Debug - Show found backups
+  debug:
+    var: backups.files
+  when: ansible_verbosity >= 4
+
 - name: Sort backups by time
   set_fact:
     sorted_backups: "{{ backups.files | sort(attribute='mtime', reverse=true) }}"
+
+- name: Debug - Show sorted backups
+  debug:
+    var: sorted_backups
+  when: ansible_verbosity >= 4
 
 - name: Delete old backups
   file:
     path: "{{ item.path }}"
     state: absent
   with_items: "{{ sorted_backups[max_backups:] }}"
-  when: backups.matched > max_backups
+  when: backups.matched > max_backups and delete_old_backups
