@@ -1,0 +1,8 @@
+galaxy_info:
+  author: R-dVL
+  role_name: backup-folder
+  description: Creates a '*.tar.gz' file from a folder
+  min_ansible_version: 2.9
+  galaxy_tags:
+    - Backup
+dependencies: []
