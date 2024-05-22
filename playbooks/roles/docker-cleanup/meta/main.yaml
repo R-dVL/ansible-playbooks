@@ -1,0 +1,11 @@
+galaxy_info:
+  author: R-dVL
+  role_name: docker-cleanup
+  description: Performs a Docker Prune
+  min_ansible_version: 2.9
+  galaxy_tags:
+    - Docker
+    - Prune
+    - Cleanup
+dependencies:
+  - Docker

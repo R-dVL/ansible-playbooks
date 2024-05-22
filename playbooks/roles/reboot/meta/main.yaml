@@ -1,0 +1,8 @@
+galaxy_info:
+  author: R-dVL
+  role_name: reboot
+  description: Schedules a system reboot
+  min_ansible_version: 2.9
+  galaxy_tags:
+    - Reboot
+dependencies: []

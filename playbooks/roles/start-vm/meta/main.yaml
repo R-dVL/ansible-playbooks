@@ -1,0 +1,10 @@
+galaxy_info:
+  author: R-dVL
+  role_name: start-vm
+  description: Starts a VirtualBox VM
+  min_ansible_version: 2.9
+  galaxy_tags:
+    - VirtualBox
+    - Virtual Machine
+dependencies:
+  - VirtualBox
