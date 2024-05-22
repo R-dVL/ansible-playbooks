@@ -1,7 +1,7 @@
 #!/bin/bash
 # Vars
 PLAYBOOK_NAME=backup
-VERBOSITY=-vv # 0-5
+VERBOSITY=-vvvv # 0-5
 
 # Create directory
 DATE=$(date +%Y-%m-%d)
