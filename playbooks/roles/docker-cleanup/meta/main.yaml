@@ -7,5 +7,4 @@ galaxy_info:
     - Docker
     - Prune
     - Cleanup
-dependencies:
-  - Docker
+dependencies: []

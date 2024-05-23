@@ -6,5 +6,4 @@ galaxy_info:
   galaxy_tags:
     - VirtualBox
     - Virtual Machine
-dependencies:
-  - VirtualBox
+dependencies: []
