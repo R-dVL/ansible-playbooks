@@ -3,17 +3,22 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # Vars
-PLAYBOOK_NAME=update
-VERBOSITY=-v # 0-5
+PLAYBOOK_NAME=vm-management
+VERBOSITY=-vvvv # 0-5
+
+# Paths
+ANSIBLE_INVENTORY=/ansible-playbooks/inventories/hosts.yaml
+ANSIBLE_PLAYBOOKS=/ansible-playbooks/playbooks
+ANSIBLE_LOGS=/logs
+VAULT_PASSWORD_FILE=/config/vault_password_file
 
 # Create directory
 DATE=$(date +%Y-%m-%d)
-mkdir -p /logs/$PLAYBOOK_NAME/$DATE
+mkdir -p $ANSIBLE_LOGS/$PLAYBOOK_NAME/$DATE
 
 # Create log
 TIME=$(date +%H-%M-%S)
-LOGFILE=/logs/$PLAYBOOK_NAME/$DATE/$TIME.log
-
+LOGFILE=$ANSIBLE_LOGS/$PLAYBOOK_NAME/$DATE/$TIME.log
 # Args
 OPTION=$1
 
