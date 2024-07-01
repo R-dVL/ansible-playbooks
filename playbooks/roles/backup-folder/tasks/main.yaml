@@ -5,6 +5,7 @@
     tar --ignore-failed-read --warning=no-file-changed -czf {{ dest_path }}/{{ansible_date_time.date}}-{{ansible_date_time.hour}}{{ansible_date_time.minute}}.tar.gz {{ src_path }}
 
 - name: Find backups
+  become: true
   find:
     paths: "{{ dest_path }}"
     patterns: '*.tar.gz'
@@ -25,6 +26,7 @@
   when: ansible_verbosity >= 4
 
 - name: Delete old backups
+  become: true
   file:
     path: "{{ item.path }}"
     state: absent
