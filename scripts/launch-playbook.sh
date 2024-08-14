@@ -3,7 +3,7 @@
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # Vars
-PLAYBOOK_NAME=cleanup
+PLAYBOOK_NAME=$1
 VERBOSITY=-vvvv # 0-5
 
 # Paths

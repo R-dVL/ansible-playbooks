@@ -1,8 +1,8 @@
 # Update and reboot
-0 6 * * 0,2,4,6 /home/ansible/ansible-playbooks/scripts/update.sh
+0 6 * * 0,2,4,6 /home/ansible/ansible-playbooks/scripts/launch-playbook.sh update
 
 # Cleanup
-0 5 * * 0,2,4,6 /home/ansible/ansible-playbooks/scripts/cleanup.sh
+0 5 * * 0,2,4,6 /home/ansible/ansible-playbooks/scripts/launch-playbook.sh cleanup
 
 # Backups data folders     
-0 12 15,30 * * /home/ansible/ansible-playbooks/scripts/backup.sh
+0 12 15,30 * * /home/ansible/ansible-playbooks/scripts/launch-playbook.sh backup
