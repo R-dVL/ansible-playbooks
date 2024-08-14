@@ -1,8 +1,15 @@
 ---
 - name: Create backup
   become: true
-  command: >
-    tar --ignore-failed-read --warning=no-file-changed -czf {{ dest_path }}/{{ansible_date_time.date}}-{{ansible_date_time.hour}}{{ansible_date_time.minute}}.tar.gz {{ src_path }}
+  archive:
+    path: "{{ src_path }}"
+    dest: "{{ dest_path }}/{{ansible_date_time.date}}-{{ansible_date_time.hour}}{{ansible_date_time.minute}}.tar.gz"
+    format: gz
+  register: archive_output
+
+- name: Debug archive output
+  debug:
+    var: archive_output
 
 - name: Find backups
   become: true

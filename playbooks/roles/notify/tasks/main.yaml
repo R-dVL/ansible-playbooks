@@ -1,0 +1,10 @@
+---
+- name: Notify
+  uri:
+    url: "https://ntfy.rdvl-server.site/{{ ntfy_topic }}"
+    method: POST
+    body: "{{ansible_task}} finished with status {{ansible_task_status}}."
+    headers:
+      Title: "Ansible Task"
+      Priority: "{{ ntfy_priority }}"
+      Tags: "heavy_check_mark"

@@ -3,18 +3,30 @@
   hosts: servers
   vars:
     option: "{{ option }}"
+    status: "Success"
 
   tasks:
-    - name: Print option value
-      debug:
-        msg: "The value of option is: {{ option }}"
-  
-    - name: Start Virtual Machine
-      include_role:
-        name: start-vm
-      when: option == 'start'
+    - block:
+      - name: Print option value
+        debug:
+          msg: "The value of option is: {{ option }}"
+    
+      - name: Start Virtual Machine
+        include_role:
+          name: start-vm
+        when: option == 'start'
 
-    - name: Stop Virtual Machine
-      include_role:
-        name: stop-vm
-      when: option == 'stop'
+      - name: Stop Virtual Machine
+        include_role:
+          name: stop-vm
+        when: option == 'stop'
+      rescue:
+        - set_fact:
+            status: "Failed"
+      always:
+        - name: Notify
+          include_role:
+            name: notify
+          vars:
+            ansible_task: "VM Management"
+            ansible_task_status: "{{ status }}"

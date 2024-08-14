@@ -1,0 +1,5 @@
+---
+ansible_task: "N/A"
+ansible_task_status: "N/A"
+ntfy_topic: "ansible"
+ntfy_priority: 4

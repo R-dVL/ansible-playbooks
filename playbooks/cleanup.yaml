@@ -1,6 +1,19 @@
 ---
 - name: Cleanup
   hosts: servers
+  vars:
+    status: "Success"
   roles:
-    - name: Docker Cleanup
-      role: docker-cleanup
+    - block:
+      - name: Docker Cleanup
+        role: docker-cleanup
+      rescue:
+        - set_fact:
+            status: "Failed"
+      always:
+        - name: Notify
+          include_role:
+            name: notify
+          vars:
+            ansible_task: "Cleanup"
+            ansible_task_status: "{{ status }}"

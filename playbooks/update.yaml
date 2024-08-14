@@ -1,9 +1,24 @@
 ---
 - name: Server Update
   hosts: servers
+  vars:
+    status: "Success"
   roles:
-    - name: Update
-      role: update
+    - block:
+        - name: Update
+          include_role:
+            name: update
 
-    - name: Reboot
-      role: reboot
+        - name: Reboot
+          include_role:
+            name: reboot
+      rescue:
+        - set_fact:
+            status: "Failed"
+      always:
+        - name: Notify
+          include_role:
+            name: notify
+          vars:
+            ansible_task: "Server Update"
+            ansible_task_status: "{{ status }}"
