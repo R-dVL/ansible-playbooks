@@ -3,7 +3,7 @@
   hosts: servers
   vars:
     status: "Success"
-  roles:
+  tasks:
     - block:
         - name: Update
           include_role:

@@ -3,10 +3,11 @@
   hosts: servers
   vars:
     status: "Success"
-  roles:
+  tasks:
     - block:
-      - name: Docker Cleanup
-        role: docker-cleanup
+        - name: Docker Cleanup
+          include_role:
+            name: docker-cleanup
       rescue:
         - set_fact:
             status: "Failed"

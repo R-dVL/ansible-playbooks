@@ -3,42 +3,47 @@
   hosts: servers
   vars:
     status: "Success"
-  roles:
+  tasks:
     - block:
-      - name: Gallery
-        role: backup-folder
-        vars:
-          src_path: /mnt/Storage/Gallery
-          dest_path: /media/devmon/WD_BLACK/Backups/Gallery/
-          max_backups: 2
+        - name: Gallery
+          include_role:
+            name: backup-folder
+          vars:
+            src_path: /mnt/Storage/Gallery
+            dest_path: /media/devmon/WD_BLACK/Backups/Gallery/
+            max_backups: 2
 
-      - name: Media
-        role: backup-folder
-        vars:
-          src_path: /mnt/Storage/Media
-          dest_path: /media/devmon/WD_BLACK/Backups/Media/
-          max_backups: 2
+        - name: Media
+          include_role:
+            name: backup-folder
+          vars:
+            src_path: /mnt/Storage/Media
+            dest_path: /media/devmon/WD_BLACK/Backups/Media/
+            max_backups: 2
 
-      - name: Documents
-        role: backup-folder
-        vars:
-          src_path: /mnt/Storage/Documents
-          dest_path: /media/devmon/WD_BLACK/Backups/Documents/
-          max_backups: 2
+        - name: Documents
+          include_role:
+            name: backup-folder
+          vars:
+            src_path: /mnt/Storage/Documents
+            dest_path: /media/devmon/WD_BLACK/Backups/Documents/
+            max_backups: 2
 
-      - name: AppData
-        role: backup-folder
-        vars:
-          src_path: /mnt/Storage/AppData
-          dest_path: /media/devmon/WD_BLACK/Backups/AppData/
-          max_backups: 3
+        - name: AppData
+          include_role:
+            name: backup-folder
+          vars:
+            src_path: /mnt/Storage/AppData
+            dest_path: /media/devmon/WD_BLACK/Backups/AppData/
+            max_backups: 3
 
-      - name: Apps
-        role: backup-folder
-        vars:
-          src_path: /var/lib/casaos/apps
-          dest_path: /media/devmon/WD_BLACK/Backups/apps/
-          max_backups: 3
+        - name: Apps
+          include_role:
+            name: backup-folder
+          vars:
+            src_path: /var/lib/casaos/apps
+            dest_path: /media/devmon/WD_BLACK/Backups/apps/
+            max_backups: 3
       rescue:
         - set_fact:
             status: "Failed"
